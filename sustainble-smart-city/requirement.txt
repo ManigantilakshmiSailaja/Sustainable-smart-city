@@ -1,8 +1,0 @@
-fastapi
-uvicorn
-streamlit
-scikit-learn
-pandas
-python-multipart
-python-dotenv
-pydantic
