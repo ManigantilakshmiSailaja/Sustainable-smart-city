@@ -1,23 +1,19 @@
-from fastapi import FastAPI, UploadFile, File
-from utils import summarize_text, forecast_kpi
-from fastapi.middleware.cors import CORSMiddleware
+from fastapi import FastAPI
+from routes import summarizer, feedback, eco_tips, forecast, chat, anomaly
 
-app = FastAPI()
+app = FastAPI(title="Sustainable Smart City Assistant")
+from transformers import BartTokenizer, BartForConditionalGeneration
+import os
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"], allow_credentials=True,
-    allow_methods=["*"], allow_headers=["*"]
-)
+model_path = os.path.join(os.path.dirname(__file__), "..", "bart-large-cnn")
 
-@app.post("/summarize/")
-async def summarize(file: UploadFile = File(...)):
-    content = await file.read()
-    summary = summarize_text(content.decode("utf-8"))
-    return {"summary": summary}
+tokenizer = BartTokenizer.from_pretrained(model_path)
+model = BartForConditionalGeneration.from_pretrained(model_path)
 
-@app.post("/forecast/")
-async def forecast_kpi_route(file: UploadFile = File(...)):
-    content = await file.read()
-    result = forecast_kpi(content.decode("utf-8"))
-    return {"forecast": result}
+
+app.include_router(summarizer.router)
+app.include_router(feedback.router)
+app.include_router(eco_tips.router)
+app.include_router(forecast.router)
+app.include_router(chat.router)
+app.include_router(anomaly.router)
