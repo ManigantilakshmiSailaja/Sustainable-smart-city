@@ -76,7 +76,7 @@ Edit
 
 ## 📽️ Project Demonstration Video
 
-👉 [Click to watch the demo video](https://drive.google.com/drive/folders/1m_vXdKkujfkVq1x57h6bZ3Kj_07hdh4T?usp=sharing)
+👉 [Click to watch the demo video]:https://drive.google.com/file/d/1_W4fZmvpxNki0SbtjuQHNGjy9JsOaNoX/view?usp=sharing
 
 ---
 
@@ -88,8 +88,6 @@ Edit
 Run Streamlit App:
 streamlit run app.py
 
-streamlit run app.py
-Optional Backend:
 If using FastAPI:
 uvicorn backend.api:app --reload
 Model Setup:
@@ -127,3 +125,4 @@ Project Title: Sustainable Smart City Assistant
 Internship: SmartBridge - Generative AI Virtual Internship
 
 Re-submission: ✅ Updated with complete files and demo video
+note:it has large model that can't access the down,oad in github.
