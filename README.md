@@ -104,22 +104,3 @@ Maniganti Lakshmi Sailaja
 Final Year Student, St. Mary’s Women’s Engineering College
 GitHub: ManigantilakshmiSailaja
 
-yaml
-Copy
-Edit
-
----
-
-### ✅ What to Do Next:
-
-1. Save the above code as a file named `README.md` inside your GitHub repo.
-2. Make sure `documentation/` contains your `.docx` or `.pdf` files.
-3. Ensure large files (over 100MB) are not committed—especially models.
-4. Push the latest version of your repo with commit message like:
-git add .
-git commit -m "Final project re-submission with documentation and video link"
-git push origin main
-
-
-
-Let me know if you'd like a ZIP-ready version or help writing your final commit.
